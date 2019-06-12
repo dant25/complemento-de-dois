@@ -98,56 +98,15 @@ public class Janela extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void converterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_converterActionPerformed
-
-        String s = "";
-        String t = "";
         String x = entrada.getText();
         char sinal = x.charAt(0);
-        
-        int v = Integer.parseInt( x );
 
-        if( sinal != '-' )
-        {
-            s += "0"; 
-            while( v > 1 )
-            {
-                int resto = v % 2;
-                v /= 2;
-                t = Integer.toString(resto) + t;
-            }
-            t = Integer.toString(v) + t;
-            s+= t;
-        }
-        else
-        {
-            s += "1";            
-            int vezes = 0;
-            double V = Integer.parseInt( x );
-            while( Math.abs(V) > 1.0 )
-            {
-                V /= 2.0;
-                vezes++;
-            }
-            v = Integer.parseInt( x );
-            double valor = Math.pow(2, vezes) * -1.0;
+        if (sinal != '-') {
 
-            
-            while( vezes != 0 )
-            {
-                if( valor + Math.pow(2, vezes-1) <= v )
-                {
-                    valor += Math.pow(2, vezes-1);
-                    s += 1;
-                }
-                else
-                {
-                    s += 0;
-                }
-                vezes--;
-            }
+        } else {
+
         }
-        saida.setText(s);        
-        
+        saida.setText(x);
     }//GEN-LAST:event_converterActionPerformed
 
     /**
